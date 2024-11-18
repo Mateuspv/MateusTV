@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { IGenre } from "../../@libs/types";
 import { GenreService } from "../../services/genres-service";
 import HighlightSection from "../../components/HighlightSection";
+import Section from "../../components/Section";
 
 
 
@@ -26,6 +27,15 @@ function Homepage(){
         }}
       >
         <HighlightSection />
+        <div 
+            style={{
+                marginTop: '8rem',
+        }}/>
+        {
+        genres.map(item => (
+          <Section key={item.id} genres={item} />
+        ))
+      }
 
       </main>
     )
