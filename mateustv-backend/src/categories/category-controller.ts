@@ -7,7 +7,7 @@ import {
   HttpException,
   HttpStatus,
   Param,
-  ParseUUIDPipe,
+  ParseIntPipe,
   Post,
   Put,
 } from '@nestjs/common';
@@ -24,7 +24,7 @@ export class CategoryController {
   }
 
   @Get(':id')
-  async findById(@Param('id', ParseUUIDPipe) id: string): Promise<Category> {
+  async findById(@Param('id', ParseIntPipe) id: number): Promise<Category> {
     const found = await this.service.findById(id);
 
     if (!found)
@@ -40,7 +40,7 @@ export class CategoryController {
 
   @Put(':id')
   async update(
-    @Param('id', ParseUUIDPipe) id: string,
+    @Param('id', ParseIntPipe) id: number,
     @Body() category: Category,
   ): Promise<Category> {
     const found = await this.service.findById(id);
@@ -55,7 +55,7 @@ export class CategoryController {
 
   @Delete(':id')
   @HttpCode(204)
-  async remove(id: string): Promise<void> {
+  async remove(id: number): Promise<void> {
     const found = await this.service.findById(id);
 
     if (!found)

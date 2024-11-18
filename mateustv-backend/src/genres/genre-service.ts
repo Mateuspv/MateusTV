@@ -14,7 +14,7 @@ export class GenreService {
     return this.repository.find();
   }
 
-  findById(id: string): Promise<Genre> {
+  findById(id: number): Promise<Genre> {
     return this.repository.findOneBy({ id: id });
   }
 
@@ -22,7 +22,7 @@ export class GenreService {
     return this.repository.save(genre);
   }
 
-  async remove(id: string): Promise<void> {
+  async remove(id: number): Promise<void> {
     await this.repository.delete(id);
   }
 }

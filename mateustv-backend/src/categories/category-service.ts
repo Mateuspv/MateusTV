@@ -15,7 +15,7 @@ export class CategoryService {
     return this.repository.find();
   }
 
-  findById(id: string): Promise<Category> {
+  findById(id: number): Promise<Category> {
     return this.repository.findOneBy({ id: id });
   }
 
@@ -23,7 +23,7 @@ export class CategoryService {
     return this.repository.save(category);
   }
 
-  async remove(id: string): Promise<void> {
+  async remove(id: number): Promise<void> {
     await this.repository.delete(id);
   }
 }

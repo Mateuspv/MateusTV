@@ -17,7 +17,7 @@ import { SubCategory } from './subCategory-entity';
 import { SubCategoryService } from './subCategory-services';
 
   
-  @Controller('categories')
+  @Controller('subCategory')
   export class SubCategoryController {
     constructor(private service: SubCategoryService) {}
   
