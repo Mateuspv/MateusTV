@@ -11,11 +11,7 @@ export class SubCategoryService {
   ) {}
 
   findAll(): Promise<SubCategory[]> {
-    return this.repository.find({
-      where: {
-        active: true,
-      },
-    });
+    return this.repository.find();
   }
 
   findById(id: number): Promise<SubCategory> {

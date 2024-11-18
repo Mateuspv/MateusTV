@@ -10,7 +10,6 @@ export interface IGenre {
   export interface ISubCategory {
     id?: number;
     name: string;
-    active: boolean;
   }
   export interface ILive {
     id?: string;
@@ -20,5 +19,5 @@ export interface IGenre {
     liveCard: string;
     categories: ICategory[];
     genres: IGenre[];
-    subCategories: ISubCategory[];
+    subCategory: ISubCategory[];
   }

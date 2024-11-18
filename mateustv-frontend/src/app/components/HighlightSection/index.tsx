@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ILive } from "../../@libs/types";
 import { LiveService } from "../../services/live-service";
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Box,  Stack, Typography } from "@mui/material";
 
 function HighlightSection() {
 
@@ -32,7 +32,6 @@ function HighlightSection() {
             marginLeft: 'auto',
             marginRight: 'auto',
         }}>
-
             <Stack direction="column">
                 <Stack direction="row">
                 <img src={`assets/${live.streamCard}`} style={{ borderRadius: '50%', width: '6%' }} />
@@ -46,19 +45,35 @@ function HighlightSection() {
                     </Typography>
                 </Stack>
                 <Stack direction="row">
-                    <Typography variant="body2" sx={{ marginTop: '1rem' }}>
-                    {live.subCategories && live.subCategories.map(subCategories => (subCategories.name)).join(', ')}
+                <Typography variant="body2" sx={{ marginTop: '1rem' }}>
+                    {live.categories && live.categories.map(categories => (categories.name)).join(', ')}
+                    </Typography>
+                    <Typography variant="body2" sx={{ marginTop: '1rem', paddingLeft: '1rem' }}>
+                    <span
+                style={{
+                  borderWidth: '1px',
+                  borderStyle: 'solid',
+                  padding: '0.2rem',
+                  marginRight: '0.3rem'
+                }}
+              >
+                    {live.subCategory && live.subCategory.map(subCategory => (subCategory.name)).join(', ')}
+                    </span>
                     </Typography>
                 </Stack>    
             </Stack>    
 
-            <Stack
-                direction="row"
-                justifyContent="flex-end"
-            >
-                <img src={`assets/${live.liveCard}`} style={{ width: '40%' }} />
 
-            </Stack>
+  
+        <Stack direction="row"
+            sx={{paddingLeft: '15rem'}}>
+            <img src={`assets/${live.liveCard}`}     style={{
+            width: '200%', 
+            height: '150%', 
+            objectFit: 'cover',
+        }}/> 
+        </Stack>    
+            
 
 
         </Box>

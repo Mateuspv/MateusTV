@@ -16,10 +16,16 @@ const getLiveById = async (id: string): Promise<ILive> => {
 const getByCategoryId = async (id: number): Promise<ILive[]> => {
   const { data } = await API.get(`${_ENDPOINT}?categoryId=${id}`)
   return data;
+}
+
+const getBySubCategoryId = async (id: number): Promise<ILive[]> => {
+  const { data } = await API.get(`${_ENDPOINT}?subCategoryId=${id}`)
+  return data;
 } 
 
 export const LiveService = {
   getLive,
   getLiveById,
-  getByCategoryId
+  getByCategoryId,
+  getBySubCategoryId
 }
