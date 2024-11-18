@@ -17,7 +17,7 @@ import {
   import { LiveService } from './live-services';
 
   
-  @Controller('live')
+  @Controller('lives')
   export class LiveController {
     constructor(private service: LiveService) {}
   
