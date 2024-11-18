@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { IGenre, ILive } from "../../@libs/types";
 import { LiveService } from "../../services/live-service";
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import LiveCard from "../LiveCard";
 
     type SectionProps = {
@@ -28,7 +28,8 @@ import LiveCard from "../LiveCard";
             width: '50%',
             display: 'flex',
             marginLeft: 'auto',
-            marginRight: 'auto',}}>
+            marginRight: 'auto',
+            borderBottom: '0.5px inset Gray'}}>
             <Stack direction="column">    
               <Typography
                 variant="h6"
