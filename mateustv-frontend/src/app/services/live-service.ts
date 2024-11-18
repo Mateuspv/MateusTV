@@ -18,7 +18,7 @@ const getByCategoryId = async (id: number): Promise<ILive[]> => {
   return data;
 } 
 
-export const MovieService = {
+export const LiveService = {
   getLive,
   getLiveById,
   getByCategoryId
