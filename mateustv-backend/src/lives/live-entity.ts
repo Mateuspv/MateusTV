@@ -22,11 +22,8 @@ import { SubCategory } from 'src/subCategories/subCategory-entity';
     streamCard: string;
   
     @Column({ type: 'text', nullable: false })
-    description: string;
+    tittle: string;
   
-    @Column({ type: 'text', nullable: false })
-    playing: string;
-
     @Column({ nullable: false })
     liveCard: string;
   
