@@ -1,6 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { CategoryModule } from './categories/category-module';
+import { GenreModule } from './genres/genre-controller';
+import { SubCategoryModule } from './subCategories/subCategory-module';
+import { LiveModule } from './lives/live-module';
 
 
 @Module({
@@ -19,6 +23,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       synchronize: true,
       autoLoadEntities: true,
     }),
+    CategoryModule,
+    GenreModule,
+    SubCategoryModule,
+    LiveModule
   ],
   
 })
