@@ -1,7 +1,7 @@
 import { API } from "../@libs/axios";
 import { ICategory } from "../@libs/types";
 
-const _ENDPOINT = '/categories';
+const _ENDPOINT = '/categorys';
 
 const getAll = () => (API.get(_ENDPOINT));
 const create = (category: ICategory) => (API.post(_ENDPOINT, category));

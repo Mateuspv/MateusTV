@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom'
-import './App.css'
 import Header from './app/components/ui/header'
 import HomeBar from './app/components/ui/homebar'
 import CategoryLayout from './app/cases/category/layout'
@@ -37,7 +36,7 @@ function App() {
             <Route path="new" element={ <GenreCreatePage /> } />
             <Route path=":id" element={ <GenreEditPage /> } />
           </Route>
-          <Route path="/live" element={ <LiveLayout /> }>
+          <Route path="/lives" element={ <LiveLayout /> }>
             <Route path="new" element={ <LiveCreatePage /> } />
             <Route path=":id" element={ <LiveEditPage /> } />
           </Route>

@@ -7,28 +7,29 @@ function HomeBar() {
         component="nav"
       >
         <ListItemText 
-          primary="Cadastros de live" />
+          primary="Cadastros Para live" />
         <ListItemButton
-          href="/lives"
+          href="/categories"
         >
-          <ListItemText primary="Categorias de Live" />
-        </ListItemButton>
-        <Divider />
-        <ListItemButton
-          href="/category"
-        >
-          <ListItemText primary="SupCategororias da Live" />
+          <ListItemText primary="Categororias da Live" />
         </ListItemButton>
         <Divider />
         <ListItemButton
           href="/subCategory"
         >
-          <ListItemText primary="Genero da Live" />
+          <ListItemText primary="SupCategororias da Live" />
         </ListItemButton>
         <Divider />
         <ListItemButton
           href="/genres"
         >
+          <ListItemText primary="Generos da Live" />
+        </ListItemButton>
+        <Divider />
+        <ListItemButton
+          href="/lives"
+        >
+          <ListItemText primary="Lives" />
         </ListItemButton>
       </List>
     </aside>

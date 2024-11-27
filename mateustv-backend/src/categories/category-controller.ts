@@ -55,7 +55,7 @@ export class CategoryController {
 
   @Delete(':id')
   @HttpCode(204)
-  async remove(id: number): Promise<void> {
+  async remove(@Param('id', ParseIntPipe) id: number): Promise<void> {
     const found = await this.service.findById(id);
 
     if (!found)
