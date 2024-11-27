@@ -75,21 +75,21 @@ function LiveForm({
     const {value} = event.target;
     const seleted = categories.find(item => item.id === Number(value))
     
-    setCategory({...live, categories: seleted!})
+    setLive({...live, categories: seleted!})
   }
 
   const handleChangeSubCategory = (event: SelectChangeEvent) => {
     const {value} = event.target;
     const seleted = subCategory.find(item => item.id === Number(value))
     
-    setSubCategory({...live, subCategory: seleted!})
+    setLive({...live, subCategory: seleted!})
   }
 
   const handleChangeGenre = (event: SelectChangeEvent) => {
     const {value} = event.target;
     const seleted = genres.find(item => item.id === Number(value))
     
-    setGenres({...live, genres: seleted!})
+    setLive({...live, genres: seleted!})
   }
 
   return (
