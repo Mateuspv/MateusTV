@@ -21,8 +21,8 @@ function LiveForm({
   const navigate = useNavigate();
   const [loading, setLoading] = useState<boolean>(false);
 
-  const [Category, setCategory] = useState<ICategory[]>([]);
-  const [SubCategory, setSubCategory] = useState<ISubCategory[]>([]);
+  const [categories, setCategory] = useState<ICategory[]>([]);
+  const [subCategory, setSubCategory] = useState<ISubCategory[]>([]);
   const [genres, setGenres] = useState<IGenre[]>([]);   
   
   useEffect(()=>{
@@ -73,14 +73,14 @@ function LiveForm({
   }
   const handleChangeCategory = (event: SelectChangeEvent) => {
     const {value} = event.target;
-    const seleted = Category.find(item => item.id === Number(value))
+    const seleted = categories.find(item => item.id === Number(value))
     
-    setCategory({...live, Category: seleted!})
+    setCategory({...live, categories: seleted!})
   }
 
   const handleChangeSubCategory = (event: SelectChangeEvent) => {
     const {value} = event.target;
-    const seleted = SubCategory.find(item => item.id === Number(value))
+    const seleted = subCategory.find(item => item.id === Number(value))
     
     setSubCategory({...live, subCategory: seleted!})
   }
@@ -104,14 +104,14 @@ function LiveForm({
        fullWidth
        size="small"
       >
-        <InputLabel id="select-type">Categoria da Live</InputLabel>
+        <InputLabel id="select-category">Categoria da Live</InputLabel>
         <Select
-          labelId="select-type"
+          labelId="select-category"
           label="Categoria da Live"
           value={String(live.categories.id || '')}
           onChange={handleChangeCategory}
         >
-          {Category.map(item => (
+          {categories.map(item => (
             <MenuItem key={item.id} value={item.id}>
               {item.name}
             </MenuItem>
@@ -122,14 +122,14 @@ function LiveForm({
        fullWidth
        size="small"
       >
-        <InputLabel id="select-model">SubCateogria da Live</InputLabel>
+        <InputLabel id="select-subcategory">SubCateogria da Live</InputLabel>
         <Select
-          labelId="select-model"
+          labelId="select-subcategory"
           label="SubCateogria da live"
           value={String(live.subCategory.id || '')}
           onChange={handleChangeSubCategory}
         >
-          {SubCategory.map(item => (
+          {subCategory.map(item => (
             <MenuItem key={item.id} value={item.id}>
               {item.name}
             </MenuItem>
@@ -140,9 +140,9 @@ function LiveForm({
        fullWidth
        size="small"
       >
-        <InputLabel id="select-model">Generos da Live</InputLabel>
+        <InputLabel id="select-genres">Generos da Live</InputLabel>
         <Select
-          labelId="select-model"
+          labelId="select-genres"
           label="Generos da live"
           value={String(live.genres.id || '')}
           onChange={handleChangeGenre}
@@ -156,7 +156,7 @@ function LiveForm({
       </FormControl>
       
       <Stack
-        direction="row"
+        direction="column"
         gap={1}
       >
         <TextField 
@@ -178,24 +178,25 @@ function LiveForm({
         <TextField 
           fullWidth
           required
+          multiline
+          rows = {3}
           label="Titulo"
           variant="outlined"
           size="small"
           value={live.tittle}
           onChange={event => setLive({...live, tittle: event.target.value})}
         />
+        <TextField       
+          fullWidth
+          required
+          label="Foto da Live"
+          variant="outlined"
+          size="small"
+          value={live.liveCard}
+           onChange={event => setLive({...live, liveCard: event.target.value})}
+          />
       </Stack>
-      <TextField       
-        fullWidth
-        required
-        multiline
-        rows={4}
-        label="Foto da Live"
-        variant="outlined"
-        size="small"
-        value={live.liveCard}
-        onChange={event => setLive({...live, liveCard: event.target.value})}
-      />
+
     </SideForm>
   )
 }

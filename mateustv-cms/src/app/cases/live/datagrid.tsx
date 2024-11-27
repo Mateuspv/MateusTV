@@ -57,7 +57,7 @@ const columns: GridColDef[] = [
     resizable: false,
     width: 120,
     renderCell: (params: GridRenderCellParams) => (
-      <>{params.row.category.name}</>
+      <>{params.row.categories.name}</>
     )
   },
   {
