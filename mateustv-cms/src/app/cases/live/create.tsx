@@ -5,7 +5,13 @@ import LiveForm from "./form";
 function LiveCreatePage() {
 
   const [live, setLive] = useState<ILive>({
-    name: ''
+    streamName: '',
+    streamCard: '',
+    tittle: '',
+    liveCard: '',
+    categories: {},
+    genres: {},
+    subCategory: {},
   } as ILive);
   
   return (

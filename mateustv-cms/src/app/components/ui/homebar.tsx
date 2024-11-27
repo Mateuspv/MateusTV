@@ -1,6 +1,6 @@
 import { Divider, List, ListItemButton, ListItemText } from "@mui/material";
 
-function SideMenu() {
+function HomeBar() {
   return (
     <aside>
       <List
@@ -35,4 +35,4 @@ function SideMenu() {
   )
 }
 
-export default SideMenu;
+export default HomeBar;

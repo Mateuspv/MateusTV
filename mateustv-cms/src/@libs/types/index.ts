@@ -17,7 +17,7 @@ export interface IGenre {
     streamCard: string;
     tittle: string;
     liveCard: string;
-    categories: ICategory[];
-    genres: IGenre[];
-    subCategory: ISubCategory[];
+    categories: ICategory;
+    genres: IGenre;
+    subCategory: ISubCategory;
   }

@@ -11,15 +11,72 @@ import { useLocation } from "react-router-dom";
 const columns: GridColDef[] = [
   {
     field: 'id',
-    headerName: 'Código Identificação',
+    headerName: 'Código',
     resizable: false,
     width: 350
   },
   {
-    field: 'name',
-    headerName: 'Tipo do Veículo',
+    field: 'streamName',
+    headerName: 'Nome do Streamer',
     resizable: false,
-    flex: 1
+    width: 160,
+    renderCell: (params: GridRenderCellParams) => (
+      <>{params.row.streamName}</>
+    )
+  },
+  {
+    field: 'streamCard',
+    headerName: 'Foto do streamer',
+    resizable: false,
+    flex: 1,
+    renderCell: (params: GridRenderCellParams) => (
+      <>{params.row.streamCard}</>
+    )
+  },
+  {
+    field: 'tittle',
+    headerName: 'Titulo',
+    resizable: false,
+    width: 120,
+    renderCell: (params: GridRenderCellParams) => (
+      <>{params.row.tittle}</>
+    )
+  },
+  {
+    field: 'liveCard',
+    headerName: 'Foto da live',
+    resizable: false,
+    width: 120,
+    renderCell: (params: GridRenderCellParams) => (
+      <>{params.row.liveCard}</>
+    )
+  },
+  {
+    field: 'category',
+    headerName: 'Categoria da live',
+    resizable: false,
+    width: 120,
+    renderCell: (params: GridRenderCellParams) => (
+      <>{params.row.category.name}</>
+    )
+  },
+  {
+    field: 'subCategory',
+    headerName: 'SubCategoria da live',
+    resizable: false,
+    width: 120,
+    renderCell: (params: GridRenderCellParams) => (
+      <>{params.row.subCategory.name}</>
+    )
+  },
+  {
+    field: 'genres',
+    headerName: 'Genero na live',
+    resizable: false,
+    width: 120,
+    renderCell: (params: GridRenderCellParams) => (
+      <>{params.row.genres.name}</>
+    )
   },
   {
     field: 'action',

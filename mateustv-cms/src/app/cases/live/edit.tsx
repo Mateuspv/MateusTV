@@ -9,7 +9,13 @@ function LiveEditPage() {
   const params = useParams();
 
   const [live, setLive] = useState<ILive>({
-    name: ''
+    streamName: '',
+    streamCard: '',
+    tittle: '',
+    liveCard: '',
+    categories: {},
+    genres: {},
+    subCategory: {},
   } as ILive);
 
   useEffect(() => {

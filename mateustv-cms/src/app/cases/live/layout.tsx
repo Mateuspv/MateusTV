@@ -4,7 +4,7 @@ import Path from "../../components/ui/path";
 import { Outlet, useNavigate } from "react-router-dom";
 import LiveDataGrid from "./datagrid";
 
-function VehicleTypeLayout() {
+function LiveLayout() {
   
   const navigate = useNavigate();
 
@@ -39,4 +39,4 @@ function VehicleTypeLayout() {
   )
 }
 
-export default VehicleTypeLayout;
+export default LiveLayout;

@@ -4,7 +4,7 @@ import Path from "../../components/ui/path";
 import { Outlet, useNavigate } from "react-router-dom";
 import SubCategoryDataGrid from "./datagrid";
 
-function VehicleTypeLayout() {
+function SubCategoryLayout() {
   
   const navigate = useNavigate();
 
@@ -39,4 +39,4 @@ function VehicleTypeLayout() {
   )
 }
 
-export default VehicleTypeLayout;
+export default SubCategoryLayout;
