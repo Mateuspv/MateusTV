@@ -3,42 +3,44 @@ import { IGenre } from "../../@libs/types";
 import { GenreService } from "../../services/genres-service";
 import HighlightSection from "../../components/HighlightSection";
 import Section from "../../components/Section";
+import HomeBar from "../../components/HomeBar";
+import './global.css'
 
 
+function Homepage() {
 
-function Homepage(){
+  const [genres, setCategories] = useState<IGenre[]>([]);
 
-    const [genres, setCategories] = useState<IGenre[]>([]);
+  useEffect(() => {
+    GenreService.getAll()
+      .then(result => {
+        setCategories(result.data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }, []);
 
-    useEffect(() => {
-      GenreService.getAll()
-        .then(result => {
-          setCategories(result.data)
-        })
-        .catch(error => {
-          console.log(error)
-        })
-    }, []);
-  
-    return (
-      <main
-        style={{
-          marginTop: '5rem',
-        }}
-      >
-        <HighlightSection />
-        <div 
+  return (
+    <div className="main-content">
+      <div className="content">
+        <HomeBar />
+        <div className="highlight-container">
+          <HighlightSection />
+          <div
             style={{
-                marginTop: '8rem',
-        }}/>
-        {
-        genres.map(item => (
-          <Section key={item.id} genres={item} />
-        ))
-      }
+              marginTop: '8rem',
+            }} />
 
-      </main>
-    )
+          {
+            genres.map(item => (
+              <Section key={item.id} genres={item} />
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default Homepage;
