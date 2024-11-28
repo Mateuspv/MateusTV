@@ -26,82 +26,114 @@ function HighlightSection() {
 
     return (
 
-        <Box sx={{
-            width: '50%',
-            display: 'flex',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-        }}>
-            <Stack direction="column">
-                <Stack direction="row">
-                    <img src={`assets/${live.streamCard}`} style={{ borderRadius: '50%', width: '6%' }} />
-                    <Typography variant="h5" sx={{ marginLeft: '0.5rem', justifyContent: 'center', alignItems: 'center', marginTop: '0.4rem' }}>
-                        {live.streamName}
-                    </Typography>
-                </Stack>
-                <Stack
-                    direction="row"
-                    sx={{
-                        width: '100%',
-                        minHeight: '3rem',
-                        alignItems: 'center'
-                    }}
-                >
-                    <Typography
-                        variant="body2"
-                        sx={{
-                            marginTop: '1rem',
-                            overflow: 'hidden',
-                            textOverflow: 'ellipsis',
-                            whiteSpace: 'nowrap'
-                        }}
-                    >
-                        {live.tittle && live.tittle.length > 94
-                            ? `${live.tittle.substring(0, 94)}...`
-                            : live.tittle}
-                    </Typography>
-                </Stack>
-                <Stack direction="row">
-                    <Typography variant="body2" sx={{ marginTop: '1rem' }}>
-                        {live.categories && live.categories.map(categories => (categories.name)).join(', ')}
-                    </Typography>
-                    <Typography variant="body2" sx={{ marginTop: '1rem', paddingLeft: '1rem' }}>
-                        <span
-                            style={{
-                                borderWidth: '1px',
-                                borderStyle: 'solid',
-                                padding: '0.2rem',
-                                marginRight: '0.3rem'
+        <Box
+            sx={{
+                width: '50%',
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'flex-start',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+            }}
+        >
+            <Stack
+                sx={{
+                    width: '70%',
+                }}
+            >
+                <Stack direction="column">
+                    <Stack direction="row">
+                        <img
+                            src={`assets/${live.streamCard}`}
+                            style={{ borderRadius: '50%', width: '6%' }}
+                        />
+                        <Typography
+                            variant="h5"
+                            sx={{
+                                marginLeft: '0.5rem',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                marginTop: '0.4rem',
                             }}
                         >
-                            {live.subCategory && live.subCategory.map(subCategory => (subCategory.name)).join(', ')}
-                        </span>
-                    </Typography>
+                            {live.streamName}
+                        </Typography>
+                    </Stack>
+                    <Stack
+                        direction="row"
+                        sx={{
+                            width: '100%',
+                            minHeight: '3rem',
+                            alignItems: 'center',
+                        }}
+                    >
+                        <Typography
+                            variant="body2"
+                            sx={{
+                                marginTop: '1rem',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                                whiteSpace: 'nowrap',
+                            }}
+                        >
+                            {live.tittle && live.tittle.length > 94
+                                ? `${live.tittle.substring(0, 94)}...`
+                                : live.tittle}
+                        </Typography>
+                    </Stack>
+                    <Stack direction="row">
+                        <Typography
+                            variant="body2"
+                            sx={{ marginTop: '1rem' }}
+                        >
+                            {live.categories &&
+                                live.categories.map((categories) => categories.name).join(', ')}
+                        </Typography>
+                        <Typography
+                            variant="body2"
+                            sx={{
+                                marginTop: '1rem',
+                                paddingLeft: '1rem',
+                            }}
+                        >
+                            <span
+                                style={{
+                                    borderWidth: '1px',
+                                    borderStyle: 'solid',
+                                    padding: '0.2rem',
+                                    marginRight: '0.3rem',
+                                }}
+                            >
+                                {live.subCategory &&
+                                    live.subCategory.map((subCategory) => subCategory.name).join(', ')}
+                            </span>
+                        </Typography>
+                    </Stack>
                 </Stack>
             </Stack>
 
-
-
-            <Stack
-                direction="row"
+            <Box
                 sx={{
-                    paddingLeft: '15rem',
-                    justifyContent: 'flex-end'
+                    width: '50%',
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                    alignItems: 'center',
+                    position: 'relative',
                 }}
             >
                 <img
                     src={`assets/${live.liveCard}`}
                     style={{
-                        width: '200%',
-                        height: '150%',
-                        objectFit: 'cover'
+                        width: '150%',
+                        height: 'auto',
+                        objectFit: 'cover',
                     }}
                 />
-            </Stack>
-
-
-
+            </Box>
         </Box>
+
+
     )
 }
 

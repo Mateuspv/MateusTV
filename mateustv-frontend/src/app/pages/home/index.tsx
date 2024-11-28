@@ -29,7 +29,7 @@ function Homepage() {
           <HighlightSection />
           <div
             style={{
-              marginTop: '8rem',
+              marginTop: '1rem',
             }} />
 
           {
