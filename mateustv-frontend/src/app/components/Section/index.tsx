@@ -16,7 +16,7 @@ import LiveCard from "../LiveCard";
         useEffect(() => {
           
           if (genres.id) {
-            LiveService.getByCategoryId(genres.id)
+            LiveService.getBygenresId(genres.id)
               .then(result => {
                 setLive(result)
               });

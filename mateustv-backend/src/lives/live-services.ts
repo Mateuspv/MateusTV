@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Category } from 'src/categories/category-entity';
 import { Repository } from 'typeorm';
 import { Live } from './live-entity';
+import { Genre } from 'src/genres/genre-entity';
 
 @Injectable()
 export class LiveService {
@@ -19,11 +20,11 @@ export class LiveService {
     return this.repository.findOneBy({ id: id });
   }
 
-  findByCategory(category: Category): Promise<Live[]> {
+  findBygenres(genre: Genre): Promise<Live[]> {
     return this.repository.find({
       where: {
-        categories: {
-          id: category.id,
+        genres: {
+          id: genre.id,
         },
       },
     });

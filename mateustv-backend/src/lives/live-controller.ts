@@ -22,10 +22,10 @@ import {
     constructor(private service: LiveService) {}
   
     @Get()
-    findAll(@Query('categoryId') categoryId?: number): Promise<Live[]> {
-      if (categoryId) {
-        return this.service.findByCategory({
-          id: (categoryId),
+    findAll(@Query('genresId') genreId?: number): Promise<Live[]> {
+      if (genreId) {
+        return this.service.findBygenres({
+          id: (genreId),
         } as Category);
       }
       return this.service.findAll();

@@ -13,19 +13,13 @@ const getLiveById = async (id: string): Promise<ILive> => {
   return data;
 } 
 
-const getByCategoryId = async (id: number): Promise<ILive[]> => {
-  const { data } = await API.get(`${_ENDPOINT}?categoryId=${id}`)
-  return data;
-}
-
-const getBySubCategoryId = async (id: number): Promise<ILive[]> => {
-  const { data } = await API.get(`${_ENDPOINT}?subCategoryId=${id}`)
+const getBygenresId = async (id: number): Promise<ILive[]> => {
+  const { data } = await API.get(`${_ENDPOINT}?genresId=${id}`)
   return data;
 } 
 
 export const LiveService = {
   getLive,
   getLiveById,
-  getByCategoryId,
-  getBySubCategoryId
+  getBygenresId
 }
