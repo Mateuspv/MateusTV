@@ -75,21 +75,21 @@ function LiveForm({
     const {value} = event.target;
     const seleted = categories.find(item => item.id === Number(value))
     
-    setLive({...live, categories: seleted!})
+    setLive({...live, categories: [seleted!]})
   }
 
   const handleChangeSubCategory = (event: SelectChangeEvent) => {
     const {value} = event.target;
     const seleted = subCategory.find(item => item.id === Number(value))
     
-    setLive({...live, subCategory: seleted!})
+    setLive({...live, subCategory: [seleted!]})
   }
 
   const handleChangeGenre = (event: SelectChangeEvent) => {
     const {value} = event.target;
     const seleted = genres.find(item => item.id === Number(value))
     
-    setLive({...live, genres: seleted!})
+    setLive({...live, genres: [seleted!]})
   }
 
   return (
@@ -108,7 +108,7 @@ function LiveForm({
         <Select
           labelId="select-category"
           label="Categoria da Live"
-          value={String(live.categories.id || '')}
+          value={live.categories.length > 0 ? String(live.categories[0].id) : ''}
           onChange={handleChangeCategory}
         >
           {categories.map(item => (
@@ -126,7 +126,7 @@ function LiveForm({
         <Select
           labelId="select-subcategory"
           label="SubCateogria da live"
-          value={String(live.subCategory.id || '')}
+          value={live.subCategory.length > 0 ? String(live.subCategory[0].id) : ''}
           onChange={handleChangeSubCategory}
         >
           {subCategory.map(item => (
@@ -144,7 +144,7 @@ function LiveForm({
         <Select
           labelId="select-genres"
           label="Generos da live"
-          value={String(live.genres.id || '')}
+          value={live.genres.length > 0 ? String(live.genres[0].id) : ''}
           onChange={handleChangeGenre}
         >
           {genres.map(item => (
